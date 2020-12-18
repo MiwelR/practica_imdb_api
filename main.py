@@ -1,6 +1,6 @@
 import requests
+from config import *
 
-API_KEY = "cd079cea"
 url_template = "http://www.omdbapi.com/?apikey={}&{}={}"
 
 def peticion(url):
@@ -37,6 +37,7 @@ while busqueda == True:
     if repeat.upper() == 'S':
         busqueda = True
     elif repeat.upper() == 'N':
+        print("Hasta su próxima búsqueda...")
         busqueda = False
     else:
         print("Como no sabemos exactamente si quiere buscar de nuevo o no, ejecute de nuevo la aplicación para buscar. Que tenga un buen día...")

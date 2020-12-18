@@ -1,0 +1,1 @@
+API_KEY = "Coloque aquí su API_KEY de omdbapi.com"

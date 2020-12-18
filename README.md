@@ -1,0 +1,1 @@
+## Kata: Conexión con API para realizar una búsqueda ##
