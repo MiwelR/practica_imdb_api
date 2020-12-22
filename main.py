@@ -12,10 +12,10 @@ def peticion(url):
         else: 
             return datos
     else: 
-        return "Error en consulta por ID: ", respuesta.status_code
+        return ("Error en consulta por ID: " + respuesta.status_code)
 
-busqueda = True
-while busqueda == True:
+repeat = 'S'
+while repeat == 'S':
     pregunta = input("Buscar Película por Título: ")
     respuesta = peticion(url_template.format(API_KEY, 's', pregunta))
     if isinstance(respuesta, str):
@@ -33,12 +33,8 @@ while busqueda == True:
             director = respuesta ['Director']
             print("La película {}, estrenada en el año {}, fue dirigida por: {}".format(titulo, agno, director))
 
-    repeat = input("¿Quieres realizar otra búsqueda? S/N: ")
-    if repeat.upper() == 'S':
-        busqueda = True
-    elif repeat.upper() == 'N':
+    repeat = input("¿Quieres realizar otra búsqueda? S/N: ").upper()
+    if repeat == 'N':
         print("Hasta su próxima búsqueda...")
-        busqueda = False
-    else:
+    elif repeat != ('N' and 'S'):
         print("Como no sabemos exactamente si quiere buscar de nuevo o no, ejecute de nuevo la aplicación para buscar. Que tenga un buen día...")
-        busqueda = False
